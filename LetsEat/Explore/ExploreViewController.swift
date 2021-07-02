@@ -13,6 +13,9 @@ class ExploreViewController: UIViewController , UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let manager = ExploreDataManager()
+        manager.fetch()
+        
 
     }
     
