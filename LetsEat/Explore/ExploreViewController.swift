@@ -10,21 +10,23 @@ import UIKit
 class ExploreViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var collectionView: UICollectionView!
+    let manager = ExploreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let manager = ExploreDataManager()
+     //   let manager = ExploreDataManager()
         manager.fetch()
-        
-
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        return manager.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreCell", for: indexPath) as! ExploreCell
+        let item  = manager.explore(at: indexPath)
+        cell.IBName.text = item.name
+        cell.imgExplore.image = UIImage(named: item.image)
         return cell
     }
     
@@ -34,7 +36,7 @@ class ExploreViewController: UIViewController , UICollectionViewDelegate, UIColl
     }
   
   
-    @IBAction func unwindLocationCancel(segue:UIStoryboardSegue){
+    @IBAction func unwindLocationCancel(segue:UIStoryboardSegue) {
         
     }
 }

@@ -8,6 +8,9 @@
 import Foundation
 
 class ExploreDataManager {
+    fileprivate var item  : [ExploreItem] = []
+    
+    
     fileprivate func loadData()->[[String: AnyObject]]{
         guard let path = Bundle.main.path(forResource:"ExploreData", ofType : "plist") , let items  = NSArray(contentsOfFile:path)
         
@@ -18,10 +21,20 @@ class ExploreDataManager {
         return items as! [[String: AnyObject]]
     }
     
+    func numberOfItems()->Int {
+        return item.count
+    }
+    
+    func explore(at index : IndexPath)->ExploreItem {
+        return item[index.item]
+    }
+    
     func fetch(){
         for data in loadData() {
-            print(data)
+            item.append(ExploreItem(dict:data))
+            
         }
     }
+    
     
 }

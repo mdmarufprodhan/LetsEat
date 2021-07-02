@@ -10,6 +10,7 @@
 		19390B03268F37F50051A002 /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19390B02268F37F50051A002 /* ExploreData.plist */; };
 		19390B05268F39A50051A002 /* ExploreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19390B04268F39A50051A002 /* ExploreItem.swift */; };
 		19390B07268F3C0A0051A002 /* ExploreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19390B06268F3C0A0051A002 /* ExploreDataManager.swift */; };
+		19390B0C268F66860051A002 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19390B0B268F66860051A002 /* ExploreCell.swift */; };
 		19426A94267DCBFF00042F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19426A93267DCBFF00042F21 /* AppDelegate.swift */; };
 		19426A96267DCBFF00042F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19426A95267DCBFF00042F21 /* SceneDelegate.swift */; };
 		19426A9B267DCBFF00042F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19426A99267DCBFF00042F21 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		19390B02268F37F50051A002 /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
 		19390B04268F39A50051A002 /* ExploreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItem.swift; sourceTree = "<group>"; };
 		19390B06268F3C0A0051A002 /* ExploreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreDataManager.swift; sourceTree = "<group>"; };
+		19390B0B268F66860051A002 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
 		19426A90267DCBFF00042F21 /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19426A93267DCBFF00042F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19426A95267DCBFF00042F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		19390B08268F658B0051A002 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19390B0B268F66860051A002 /* ExploreCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		19426A87267DCBFF00042F21 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		19426A92267DCBFF00042F21 /* LetsEat */ = {
 			isa = PBXGroup;
 			children = (
+				19390B08268F658B0051A002 /* View */,
 				19390B01268F37CC0051A002 /* Model */,
 				194B0AF2267E49C500D400F1 /* Resturents */,
 				19426AAE267DD5FA00042F21 /* Explore */,
@@ -175,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19390B05268F39A50051A002 /* ExploreItem.swift in Sources */,
+				19390B0C268F66860051A002 /* ExploreCell.swift in Sources */,
 				19426A94267DCBFF00042F21 /* AppDelegate.swift in Sources */,
 				194B0AF4267E49F700D400F1 /* ResturentListViewController.swift in Sources */,
 				19426A96267DCBFF00042F21 /* SceneDelegate.swift in Sources */,
