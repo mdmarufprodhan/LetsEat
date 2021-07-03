@@ -185,15 +185,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkl-K1-P2f">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF8-4F-0cl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EXPLORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF8-4F-0cl">
                                                     <rect key="frame" x="8" y="45" width="294" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG4-8g-k4z">
-                                                    <rect key="frame" x="8" y="24" width="398" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE SELECT A LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG4-8g-k4z">
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="ob8-yH-SAC"/>
                                                     </constraints>
@@ -208,6 +208,9 @@
                                                         <constraint firstAttribute="width" constant="96" id="Xyq-xB-V0e"/>
                                                     </constraints>
                                                     <state key="normal" image="btn-location"/>
+                                                    <connections>
+                                                        <segue destination="UOS-5T-4fF" kind="showDetail" id="4Om-i9-OIh"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYo-rw-0W5">
                                                     <rect key="frame" x="8" y="89" width="398" height="1"/>
@@ -255,16 +258,16 @@
             </objects>
             <point key="canvasLocation" x="1392.753623188406" y="-579.24107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="5Qa-v6-242">
             <objects>
-                <viewController id="UOS-5T-4fF" sceneMemberID="viewController">
+                <viewController id="UOS-5T-4fF" customClass="LocationViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JER-np-9Rl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ZK-L9-Mtp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" textLabel="lJY-3e-rSO" style="IBUITableViewCellStyleDefault" id="BDH-Iv-mXu">
@@ -278,7 +281,6 @@
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -286,6 +288,10 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UOS-5T-4fF" id="eG3-sA-Qdv"/>
+                                    <outlet property="delegate" destination="UOS-5T-4fF" id="Uu5-rY-xLJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eXv-uh-lbT"/>
@@ -305,11 +311,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="eyX-Rd-MBG"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="1ZK-L9-Mtp" id="arx-Rk-Zab"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCb-3n-I3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="n9h-bH-hoo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2961" y="-579"/>
+            <point key="canvasLocation" x="2884" y="-579"/>
         </scene>
         <!--Resturent List View Controller-->
         <scene sceneID="Bpe-nD-KIh">
@@ -541,9 +550,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xL3-0M-1A6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140.5797101449275" y="-579.24107142857144"/>
+            <point key="canvasLocation" x="2142" y="-230"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Om-i9-OIh"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="american" width="88.5" height="64.5"/>
         <image name="btn-location" width="96" height="25"/>
